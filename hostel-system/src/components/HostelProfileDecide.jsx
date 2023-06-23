@@ -29,6 +29,7 @@ function HostelProfileDecide() {
     const getData=async()=>{
         const r=await getRecords({hallName:nameShort})
         setRecords(r)
+        setLoader2(false)
     }
 
     useEffect(() => {
@@ -36,7 +37,6 @@ function HostelProfileDecide() {
         getData()
         if(window.innerWidth<=550)
         setFlag(false)
-        setLoader2(false)
 
     }, [])
 
