@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Login from './Login'
 import HostelList from './HostelList'
 import HostelProfile from './HostelProfile'
@@ -8,14 +8,14 @@ import HostelProfileDecide from './HostelProfileDecide'
 import Hostel from './Hostel'
 import svg from '/assets/nitr_logo.svg'
 import { CirclesWithBar } from 'react-loader-spinner'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function Home() {
 
-  const [loader,setLoader]=useState(true)
+  const [loader, setLoader] = useState(true)
   const [rollNo, setRollNo] = useState('')
 
-  useEffect(()=>{
+  useEffect(() => {
     // var it=setTimeout(()=>{
     //   setLoader(false)
     // },2000)
@@ -23,11 +23,11 @@ function Home() {
     //   clearInterval(it)
     // }
     setLoader(false)
-  },[])
+  }, [])
 
-  
-  
-  if(loader)
+
+
+  if (loader)
     return <CirclesWithBar
       height="100"
       width="100"
@@ -45,38 +45,38 @@ function Home() {
 
   return (
     // <div>
-      <div>
-      <img src={svg} className='svg mb-[100px]' alt="Your SVG" />
-    <Router>
-      <div className='App'>
-        <Routes>
-          <Route path='/'
-            element={
-              <Login rollNo={rollNo} setRollNo={setRollNo}
-              />
-            }
-          />
-          <Route path='/hostelList'
-            element={
-              <HostelList
-              />
-            }
-          />
-          <Route path='/hostelProfile'
-            element={
-              <HostelProfileDecide
-              />
-            }
-          />
-          <Route path='/query'
-            element={
-              <Query rollNo={rollNo} setRollNo={setRollNo}
-              />
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <div>
+      <img src={'https://github.com/harsh-0712/Hostel-Management/assets/116945589/0a8f5eb1-f9d3-4396-bfbd-8357633e1366'} className='svg mb-[100px]' alt="Your SVG" />
+      <Router>
+        <div className='App'>
+          <Routes>
+            <Route path='/'
+              element={
+                <Login rollNo={rollNo} setRollNo={setRollNo}
+                />
+              }
+            />
+            <Route path='/hostelList'
+              element={
+                <HostelList
+                />
+              }
+            />
+            <Route path='/hostelProfile'
+              element={
+                <HostelProfileDecide
+                />
+              }
+            />
+            <Route path='/query'
+              element={
+                <Query rollNo={rollNo} setRollNo={setRollNo}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
     </div>
     // {/* </div> */}
   )
