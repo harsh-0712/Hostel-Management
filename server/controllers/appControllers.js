@@ -100,7 +100,6 @@ export const getUsers=async(req,res)=>{
         const entry=await Model.findOne({hallName})
         if(!entry)
         return res.status(404).send({msg:'Cannot find Hall'})
-        console.log("entry",entry);
         // res.status(201).json({...entry.userList})
         res.status(201).json([...entry.userList])
 
