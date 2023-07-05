@@ -2,7 +2,6 @@ import express from 'express'
 import cors from 'cors'
 import connect from './database/connection.js'
 import route from './router/route.js'
-import UserModel from './model/userModel.js'
 
 const app=express()
 
@@ -17,14 +16,16 @@ const port=8080
 
 // HTTP Requests
 app.get('/',async(req,res)=>{
-    console.log('hello');
-    const task=await UserModel.create({hallName:'KMSHall',userList:[]})
     res.status(201).json('Home Get Requests')
 })
 
 
 // api routes
 app.use('/api',route);
+
+app.get('/helper',async(req,res)=>{
+    return res.status(201).json('Helper')
+})
 
 
 
