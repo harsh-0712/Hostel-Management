@@ -12,8 +12,11 @@ const port=8000
 // HTTP Requests
 app.get('/',(req,res)=>{
     setInterval(async()=>{
-        const task=await axios.get('https://hm-server-2tgn.onrender.com/helper')
-    },600000)
+        console.log('making req');
+        axios.get('https://hm-server-2tgn.onrender.com/helper')
+        console.log('made req');
+        // axios.get('http://localhost:8080/helper')
+    },120000)
     return res.status(201).json("Helper")
 })
 
