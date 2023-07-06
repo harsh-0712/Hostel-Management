@@ -12,13 +12,13 @@ const port=8000
 // HTTP Requests
 app.get('/',(req,res)=>{
     setInterval(async()=>{
-        console.log('making req');
+        // console.log('making req');
         axios.get('https://hm-server-2tgn.onrender.com/helper')
-        console.log('made req');
+        // console.log('made req');
         // axios.get('http://localhost:8080/helper')
     },600000)
     setInterval(async()=>{
-        console.log('calling helper 2');
+        // console.log('calling helper 2');
         axios.get('https://helper-service.onrender.com/help')
         // axios.get('http://localhost:8080/helper')
     },600000)
@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/help',(req,res)=>{
-    console.log('help');
+    // console.log('help');
     return res.status(201).json("Helper")
 })
 

@@ -24,7 +24,7 @@ app.get('/',async(req,res)=>{
 app.use('/api',route);
 
 app.get('/helper',async(req,res)=>{
-    console.log('helper request');
+    // console.log('helper request');
     return res.status(201).json('Helper')
 })
 
