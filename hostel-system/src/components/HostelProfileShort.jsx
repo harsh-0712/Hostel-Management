@@ -4,8 +4,7 @@ import { useLocation } from 'react-router'
 import { data } from '../assets/options'
 import { CirclesWithBar } from 'react-loader-spinner'
 
-function HostelProfileShort({records}) {
-
+function HostelProfileShort({records,name}) {
     return (
             <div className="container-table mt-10 ">
                 <ul className="responsive-table gap-5">
@@ -13,6 +12,7 @@ function HostelProfileShort({records}) {
                         <div className="col col-1">Room No</div>
                         <div className="col col-2">Name</div>
                         <div className="col col-3">Preferred Hall</div>
+                        {/* <div className="col col-3">Preferred Room No</div> */}
                         <div className="col col-4">Mobile No</div>
                     </li>
                     {
@@ -39,18 +39,7 @@ function HostelProfileShort({records}) {
                         <div className="col col-3" data-label="Vendor Name">HB Hall, GDB Hall</div>
                         <div className="col col-4" data-label="Vendor Name">9079666807</div>
                     </li>
-                <li className="table-rowi">
-                    <div className="col col-1" data-label="Medicine Name">A-318</div>
-                    <div className="col col-2" data-label="Quantity">Mahendra Singh</div>
-                    <div className="col col-3" data-label="Vendor Name">HB Hall, GDB Hall</div>
-                    <div className="col col-4" data-label="Vendor Name">9079666807</div>
-                </li>
-                <li className="table-rowi">
-                    <div className="col col-1" data-label="Medicine Name">A-318</div>
-                    <div className="col col-2" data-label="Quantity">Mahendra Singh</div>
-                    <div className="col col-3" data-label="Vendor Name">HB Hall, GDB Hall</div>
-                    <div className="col col-4" data-label="Vendor Name">9079666807</div>
-                </li> */}
+                 */}
                 </ul>
             </div>
 

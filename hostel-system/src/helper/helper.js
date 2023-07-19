@@ -10,7 +10,7 @@ export const register=async(items)=>{
         return await axios.post(`${url}/api/createQuery`,{items})
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         return error
     }
 }
@@ -20,18 +20,18 @@ export const update=async(items)=>{
         return await axios.post(`${url}/api/updateQuery`,{items})
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         return error
     }
 }
 
 export const deleteRecord=async(items)=>{
     try{
-        console.log(items);
+        // console.log(items);
         return await axios.delete(`${url}/api/deleteRecord?rollNo=${items.rollNo}&hallName=${items.hallName}`)
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         return error
     }
 }
@@ -42,31 +42,31 @@ export const getRecords=async(items)=>{
         return data
         
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return error
     }
 }
 
 export const getByRollNo=async(items)=>{
     try {
-        console.log('hello');
+        // console.log('hello');
         let {data}=await axios.get(`${url}/api/getByRollNo?rollNo=${items.rollNo}`)
         // console.log(data.hallName);
         return data.hallName
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return error
     }
 }
 
 export const getUserByRollNo=async(items)=>{
     try {
-        console.log('hi');
+        // console.log('hi');
         let {data}=await axios.get(`${url}/api/getUserByRollNo?rollNo=${items.rollNo}&hallName=${items.hallName}`)
-        console.log(data);
+        // console.log(data);
         return data
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return error
     }
 }

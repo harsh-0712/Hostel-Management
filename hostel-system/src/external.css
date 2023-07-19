@@ -163,7 +163,24 @@ body{
     right: 5%;
     position: fixed;
     text-align: center;
+}
 
+.hall {
+    width: 120px;
+    /* height: 120px; */
+    padding: 10px;
+    /* border-radius: 100%; */
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;    
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    /* position: fixed; */
+    text-align: center;
+    justify-items: center;
 }
 
 .btn {
@@ -201,6 +218,12 @@ body{
 
 
 @media all and (max-width:500px) {
+
+    .hall{
+        width: 80px;
+        /* height: 80px; */
+    }
+
     .signupSection {
         height: inherit;
         width: fit-content;

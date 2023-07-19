@@ -6,6 +6,7 @@ import HostelProfileShort from './HostelProfileShort'
 import HostelProfile from './HostelProfile'
 import { getRecords } from '../helper/helper.js'
 import { CirclesWithBar } from 'react-loader-spinner'
+import Hall from './Hall'
 
 function HostelProfileDecide() {
 
@@ -28,7 +29,7 @@ function HostelProfileDecide() {
 
     const getData=async()=>{
         const r=await getRecords({hallName:nameShort})
-        setRecords(r)
+        setRecords(r.reverse())
         setLoader2(false)
     }
 
@@ -62,6 +63,7 @@ function HostelProfileDecide() {
             {
                 flag ? <HostelProfile records={records} name={nameShort} /> : <HostelProfileShort records={records} name={nameShort} />
             }
+            <Hall/>
             <QueryBtn />
         </div>
 

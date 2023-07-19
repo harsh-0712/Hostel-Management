@@ -41,19 +41,30 @@ function Query({rollNo,setRollNo}) {
 
     const handleSubmit=async()=>{
         if(!validate())
-        return
-        console.log(name,rollNo,roomNo,mobileNo,hall,preHall);
+        {
+            alert('Type Correct RollNo')
+            return
+        }
+        if (!(name &&hall!==undefined && hall.hasOwnProperty('value')))
+        {
+            alert('Enter Name and Hall')
+            return false;
+        }
+        setLoader1(true)
         if(user===false)
         await register({name,rollNo,roomNo,number:mobileNo,hallName:hall,preferredHall:preHall})
         else 
         await update({ name, rollNo, roomNo, number: mobileNo, hallName: hall, preferredHall: preHall })
-        setLoader1(true)
         navigate('/hostelProfile',{state:{name:hall.value}})
     }
 
     const handleDelete=async()=>{
         validate()
-        await deleteRecord({rollNo,hallName:hall.value})
+        if(hall!==undefined&&hall.hasOwnProperty('value'))
+        {
+            setLoader1(true)
+            await deleteRecord({rollNo,hallName:hall.value})
+        }
         navigate('/hostelList')
     }
 
@@ -61,7 +72,7 @@ function Query({rollNo,setRollNo}) {
         let hallName=undefined
         if(validate())
         hallName=await getByRollNo({rollNo})
-        if(hallName!==undefined)
+        if(hallName!==undefined&&hallName!='AxiosError')
         {
             let data=await getUserByRollNo({rollNo,hallName})
             if(data.roomNo!==undefined)
@@ -119,7 +130,7 @@ return (
             <div className="info">
                 <h2 className='text-4xl'>Create Your Query</h2>
                 <i className="icon ion-ios-ionic-outline" aria-hidden="true"></i>
-                <p className='xs:mt-32 mt-6'>Tell People which room you are Offering</p>
+                <p className='xs:mt-32 mt-6'>Which Room you want to Vacate</p>
             </div>
             <form  className="signupForm" name="signupform">
                 <ul className="noBullet">

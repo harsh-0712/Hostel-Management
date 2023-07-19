@@ -6,6 +6,7 @@ import { data } from '../assets/options'
 import { CirclesWithBar } from 'react-loader-spinner';
 
 function HostelProfile({records,name}) {
+
     return (
             <div className="container-table mt-10 ">
                 <ul className="responsive-table gap-5">
